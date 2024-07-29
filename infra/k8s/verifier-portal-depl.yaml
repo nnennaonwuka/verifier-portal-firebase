@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: verifier-portal-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: verifier-portal
+  template:
+    metadata:
+      labels:
+        app: verifier-portal
+    spec:
+      containers:
+        - name: verifier-portal 
+          image: REGISTRY_HOSTNAME/GKE_PROJECT/IMAGE:GITHUB_SHA
+          ports:
+          - containerPort: 3000
+
+          # Environmental variables config  
+          env:
+          - name: REACT_APP_BACKEND_API
+            valueFrom:
+              secretKeyRef:
+                name: react-app-backend-api
+                key: REACT_APP_BACKEND_API
+          - name: EMAIL
+            valueFrom:
+              secretKeyRef:
+                name: react-app-backend-api
+                key: EMAIL

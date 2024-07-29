@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap');
+
+@font-face {
+  font-family: 'Feather'; /* Choose a suitable font-family name */
+  src: url('../fonts/feather.ttf') format('truetype'); /* Path to your TTF font file */
+  font-weight: normal;
+  font-style: normal;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 12px;
+  }
+ 
+  .title-2 {
+   font-size: 14px;
+   font-weight: 500;
+   line-height: 21px;
+  }
+
+  .title-2-semibold {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+   }
+  
+   .header {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 0em;
+   }
+
+
+   .header-2 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+   }
+
+   .sub-header {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0em;
+   }
+
+   .p1 {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+   }
+
+   .p1-semi-bold {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+   }
+
+   .p2 {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 12px;
+   }
+
+
+   .box-shadow {
+    box-shadow: -2px 0px 36px rgba(0, 0, 0, 0.06);
+   }
+
+}
+
+
+/* Loader  Component */
+
+
+.loader { 
+  width:100%; 
+  margin:0 auto;
+  border-radius:10px;
+  border:4px solid transparent;
+  position:relative;
+  padding:2px;
+}
+.loader:before {
+  content:'';
+  /* border:1px solid red;  */
+  border-radius:10px;
+  position:absolute;
+  top:-4px; 
+  right:-4px; 
+  bottom:-4px; 
+  left:-4px;
+}
+.loader .loaderBar { 
+  position:absolute;
+  border-radius:10px;
+  top:0;
+  right:100%;
+  bottom:0;
+  left:0;
+  background: #FED830; 
+  width:0;
+  animation:borealisBar 2s linear infinite;
+}
+
+@keyframes borealisBar {
+  0% {
+    left:0%;
+    right:100%;
+    width:0%;
+  }
+  10% {
+    left:0%;
+    right:75%;
+    width:25%;
+  }
+  90% {
+    right:0%;
+    left:75%;
+    width:25%;
+  }
+  100% {
+    left:100%;
+    right:0%;
+    width:0%;
+  }
+}
+
+
+body {
+  margin: 0;
+  font-family: Poppins;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+hr.divider {
+  opacity: 0.1;
+  border: 1px solid #9097A5;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+
+
